@@ -7,7 +7,7 @@
     "build": "webpack --env.production",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server\"",
     "stats": "webpack --env.production --profile --json > stats.json",
-    "test": "jest",
+    "test": "jest -u",
     "lint": "eslint --ext .jsx,.js src/"
   },
   "keywords": [],
