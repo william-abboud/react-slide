@@ -3,21 +3,26 @@ import "babel-polyfill";
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './js/app';
+import Slider from './js/app';
+import Slides from './js/slides';
 
-function renderApp(Component) {
+function renderApp(Component, Children) {
   render(
     <AppContainer>
-      <Component />
+      <Component>
+        {
+          (state) => <Children {...state} />
+        }
+      </Component>
     </AppContainer>,
     document.getElementById("root")
   );
 }
 
-renderApp(App);
+renderApp(Slider, Slides);
 
 if (process.env.NODE_ENV !== "production") {
   if (module.hot) {
-    module.hot.accept('./js/app', () => renderApp(App));
+    module.hot.accept('./js/app', () => renderApp(Slider, Slides));
   }
 }
