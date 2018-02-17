@@ -6,12 +6,11 @@ class Slides extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-      </div>
-    );
+    return [
+      <div style={{ width: "100px" }} onClick={this.props.slideNext}>Slide</div>,
+      <div style={{ width: "100px" }} onClick={this.props.slideNext}>Slide</div>,
+      <div style={{ width: "100px" }} onClick={this.props.slideNext}>Slide</div>,
+    ];
   }
 }
 
