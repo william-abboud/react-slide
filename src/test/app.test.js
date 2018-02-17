@@ -25,17 +25,14 @@ describe("Slider", () => {
     expect(childInst.props.currentSlideIdx).toBe(0);
 
     childInst.props.slideNext();
-
     expect(childInst.props.currentSlideIdx).toBe(1);
   });
 
   test("goes to previous slide", () => {
     childInst.props.slideNext();
-
     expect(childInst.props.currentSlideIdx).toBe(1);
 
     childInst.props.slidePrevious();
-
     expect(childInst.props.currentSlideIdx).toBe(0);
   });
 });
