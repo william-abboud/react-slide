@@ -8,6 +8,7 @@
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server\"",
     "stats": "webpack --env.production --profile --json > stats.json",
     "test": "jest -u",
+    "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "lint": "eslint --ext .jsx,.js src/"
   },
   "keywords": [],
