@@ -61,15 +61,21 @@ class Slider extends Component {
   }
 
   slideNext() {
-    this.setState({
-      currentSlideIdx: this.state.currentSlideIdx + 1
-    });
+    const { currentSlideIdx } = this.state;
+
+    if (currentSlideIdx !== this.slides.length - 1) {
+      this.setState({
+        currentSlideIdx: currentSlideIdx + 1
+      });
+    }
   }
 
   slidePrevious() {
-    this.setState({
-      currentSlideIdx: this.state.currentSlideIdx - 1
-    });
+    if (this.state.currentSlideIdx !== 0) {
+      this.setState({
+        currentSlideIdx: this.state.currentSlideIdx - 1
+      });
+    }
   }
 
   render() {
